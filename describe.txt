@@ -1,6 +1,0 @@
-reader.py:根据time读取data.json和task.json,生成并返回json_read给Env,json_read的格式为(num_agents * (3+3*(num_satellites+4)));此外还包括max_K,num_agents,num_satellites等数据;
-
-env_new.py:初始化环境,根据time进行step,在step中调用reader函数读取json,经过一定的数据处理(传入的actions可能无法连接,done掉的任务不能继续增加done_time,actions传入导致每个卫星的k变化),
-处理完成后与Env记录的上一次动作拼接得到state(大小为num_agents * (num_satellites+3+3*(num_satellites+4)))),done等,最后在计算reward等；
-
-main.py:实现MADDPG，设置episode、length、eval等，每个一段时间更新网络进行eval；
